@@ -1,0 +1,129 @@
+/*   
+           <div class = 'detail'>
+        <div class = 'detail__header'>
+            <img class='detail__img' src='${character.image}'>
+            <h4 class='detail__name'>${character.name}</h4>
+        </div>
+        <div class='detail__container-status'>
+            <h3 class='detail__text'>STATUS</h3>
+            <div class='detail__container-options'>
+                <h4 class='detail__status detail__status--Alive'>ALIVE</h4>
+                <h4 class='detail__status detail__status--Dead'>DEAD</h4>
+                <h4 class='detail__status detail__status--unknown'>UKNOWN</h4>
+            </div>
+        </div>
+        <div class='detail__body'>
+            <h3 class='detail__text'>SPECIES</h3>
+            <h4 class='detail__data'>>${character.species}</h4>
+            <h3 class='detail__text'>ORIGIN</h3>
+            <h4 class='detail__data'>${character.origin}</h4>
+            <h3 class='detail__text detail__text--location'>LOCATION</h3>
+            <h4 class='detail__data'>${character.location}</h4>
+        </div>
+        <div class='detail__container-episodes'>
+            <h3 class='detail__text'>EPISODE</h3>
+            <h4 class='detail__episode'>${character.episode}</h4>
+        </div>
+    </div>  
+`
+*/
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    &__header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    &__img{
+        width: 200px;
+        border: 5px solid #BEA1C7;
+        border-radius: 100px;
+        margin-top: 30px;
+    }
+    &__name{
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-bottom: 3px solid #4D1F5B;
+        margin: 10px;
+    }
+    &__text{
+        font-size: 14px;
+        font-weight: 700;
+        color: $octonary-color;
+        margin: 10px;
+       
+        
+    }
+    &__data{
+        width: 100%;
+        font-size: 18px;
+        font-weight: 300;
+        color: $primary-color;
+        background-color: $quaternary-color;
+        border-radius:0 20px 20px 0;
+        margin: 10px;
+        padding: 10px;
+        &--location{
+            border-radius:20px;
+            background-color: $quinary-color;
+            color:$senary-color;
+        }
+        &--residentes{
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+    }
+    &__container-status{
+        width: 80%;
+        margin: 10px;
+    }
+    
+    &__container-options{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        align-items: center;
+        justify-content: space-around;
+
+    }
+
+    &__body{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    &__status{
+        
+        color: $primary-color;
+        font-size: 10px;
+        font-weight: 300;
+        padding: 5px 20px;
+        @include adaptTo('not-mobile'){
+            font-size: 14px;
+        }
+        &--Alive{
+        background-color: $septenary-color;
+            &--active{
+                background-color: $septenary-color;
+            }
+        }
+        &--unknown{
+            background-color: $eleven-color;
+            }
+        &--Dead{
+            background-color: $ten-color;
+        }
+    }
+}

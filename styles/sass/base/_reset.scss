@@ -1,0 +1,22 @@
+
+
+  /* Reseteamos los margin y paddings de todas las etiquetas */
+  * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    vertical-align: baseline;
+  }
+  
+  body {
+    background-color: $twelve-color;
+    margin: 0 auto;
+    min-height: 100vh;
+    max-width: 1440px;
+    color: $primary-color;
+    font-family: 'Poppis';
+    font-weight: 300;
+  }
+
+ 

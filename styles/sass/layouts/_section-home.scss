@@ -1,0 +1,19 @@
+.section-home{
+
+    color: $primary-color;
+
+    &__title{
+        font-size: 16px;
+        font-weight: 300;
+        margin: 30px auto;
+        margin-bottom: 80px;
+        padding: 20px;
+        width: 80%;
+        max-width: 400px;
+        border-bottom: 2px solid black;
+        @include adaptTo('not-mobile'){
+            font-size: 20px;
+        }
+    }
+
+}

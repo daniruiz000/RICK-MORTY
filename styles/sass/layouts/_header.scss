@@ -1,0 +1,84 @@
+.header{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    text-align: center;
+    background-color: $senary-color;
+    color: $secondary-color;
+    max-width: 1320px;
+    margin: 0 auto;
+    position: relative;
+    &__icon{
+        color: #ffffff;
+        font-size: 30px;
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        @include adaptTo('not-mobile'){
+            font-size: 40px;
+            top: 20px;
+            left: 30px;
+        }
+    }
+    &__container{
+        margin: 120px auto;
+    }
+    &__title{
+        font-size: 16px;
+        font-weight: 300;
+        text-decoration-line: underline;
+        @include adaptTo('not-mobile'){
+            font-size: 20px;
+        }
+    }
+    &__subtitle{
+        font-weight: 700;
+        font-size: 12px;
+        @include adaptTo('not-mobile'){
+            font-size: 18px;
+        }
+    }
+    &--home{
+        background-image: url("../../assets/images/rick-y-morty-temporada-4_3840x2400_xtrafondos\ 1.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 720px;
+        justify-content: flex-start;
+        .header__icon{
+            display: none;
+        }
+        @include adaptTo('desktop-xl'){
+            border-radius: 20px;
+        }
+
+        .header__container{
+            margin: 120px auto;
+            @include adaptTo('desktop'){
+                margin: 100px auto;
+            }
+        }
+        .header__title{
+            font-size: 36px;
+            @include adaptTo('tablet'){
+                font-size: 44px;
+            }
+            @include adaptTo('desktop'){
+                font-size: 60px;
+            }
+ 
+        }
+        .header__subtitle{
+            font-size: 28px;
+            @include adaptTo('tablet'){
+                font-size: 36px;
+            }
+            @include adaptTo('desktop'){
+                font-size: 50px;
+            }
+       
+        }
+    }
+}
