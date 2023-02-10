@@ -97,10 +97,17 @@
     &__data-container{
         width: 40%;
         margin: 0 10px;
+        &--episodes{
+            width: 90%;
+        }
     }
     &__data{
         font-size: 14px;
         color: $primary-color;
+        &--episodes{
+            font-size: 14px;
+            color: $primary-color;
+        }
         @include adaptTo('not-mobile'){
             font-size: 16px;
         }

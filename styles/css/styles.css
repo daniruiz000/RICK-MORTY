@@ -368,6 +368,28 @@ body {
 .section__resident {
   border-radius: 100px;
   width: 40px;
+  margin: 10px;
+}
+.section__episode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+}
+.section__episode--character {
+  margin: 10px;
+  border-radius: 100px;
+  padding: 5px 10px;
+  background-color: #EEE4F1;
+  color: #4D1F5B;
+}
+.section__episode--seasons {
+  width: 95%;
+  border-radius: 50px;
+  background-color: #EEE4F1;
+  color: #4D1F5B;
+  padding: 10px auto;
+  margin: 10px;
 }
 
 /*
@@ -478,7 +500,14 @@ body {
   width: 40%;
   margin: 0 10px;
 }
+.card__data-container--episodes {
+  width: 90%;
+}
 .card__data {
+  font-size: 14px;
+  color: #000000;
+}
+.card__data--episodes {
   font-size: 14px;
   color: #000000;
 }
@@ -618,6 +647,14 @@ body {
   align-content: center;
   align-items: center;
   justify-content: space-around;
+}
+.detail__episode {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 95%;
 }
 .detail__body {
   width: 80%;

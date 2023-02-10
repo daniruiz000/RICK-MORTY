@@ -94,6 +94,31 @@
     &__resident{
         border-radius: 100px;
         width: 40px;
+        margin: 10px;
         
+    }
+    &__episode{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+
+        &--character{
+            margin: 10px;
+            border-radius: 100px;
+            padding: 5px 10px;
+            background-color: $quinary-color;
+            color: $senary-color;
+
+        }
+
+        &--seasons{
+            width: 95%;
+            border-radius: 50px;
+            background-color: $quinary-color;
+            color: $senary-color;
+            padding: 10px auto;
+            margin: 10px;
+        }
     }
 }
