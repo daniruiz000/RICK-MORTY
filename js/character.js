@@ -21,7 +21,7 @@ const printCharacter = (url)=>{
 
         `;
 
-        let buttonLocation = document.querySelector('.detail__data--location');
+        let buttonLocation = document.querySelector('.detail__data--character-location');
         buttonLocation.addEventListener('click', ()=> moreDetailsLocation(response.location.url));
         
         let buttonEpisodes = [...document.getElementsByClassName('section__episode')];
@@ -167,26 +167,35 @@ const formatCharacterDetail = (character) => {
             <img class='detail__img' src='${character.image}'>
             <h4 class='detail__name'>${character.name}</h4>
         </div>
-        <div class='detail__container-status'>
-            <h3 class='detail__text'>STATUS</h3>
-            <div class='detail__container-options'>
-                <h4 class='detail__status ${statusAlive} '>ALIVE</h4>
-                <h4 class='detail__status ${statusDead}'>DEAD</h4>
-                <h4 class='detail__status ${statusUnknown}'>UKNOWN</h4>
+        <div class='detail__body'>
+            <div class='detail__container-status'>
+                <h3 class='detail__text'>STATUS</h3>
+                <div class='detail__container-options'>
+                    <h4 class='detail__status ${statusAlive} '>ALIVE</h4>
+                    <h4 class='detail__status ${statusDead}'>DEAD</h4>
+                    <h4 class='detail__status ${statusUnknown}'>UKNOWN</h4>
+                </div>
+            </div>
+            <div class='detail__container-data'>
+                <div class='detail__body-dates'>
+                    <h3 class='detail__text'>SPECIES</h3>
+                    <h4 class='detail__data'>${character.species}</h4>
+                </div>
+                <div class='detail__body-dates'>
+                    <h3 class='detail__text'>ORIGIN</h3>
+                    <h4 class='detail__data detail__data'>${character.origin.name}</h4>
+                </div>
+                <div class='detail__body-dates'>
+                    <h3 class='detail__text'>LOCATION</h3>
+                    <h4 class='detail__data detail__data--character-location'>${character.location.name}</h4>
+                </div>     
+            </div>
+            <div class='detail__container-episodes'>
+                <h3 class='detail__text'>EPISODE</h3>
+                <div class='detail__episode'>${episodesTemplate}<div>
             </div>
         </div>
-        <div class='detail__body'>
-            <h3 class='detail__text'>SPECIES</h3>
-            <h4 class='detail__data'>${character.species}</h4>
-            <h3 class='detail__text'>ORIGIN</h3>
-            <h4 class='detail__data detail__data'>${character.origin.name}</h4>
-            <h3 class='detail__text'>LOCATION</h3>
-            <h4 class='detail__data detail__data--location'>${character.location.name}</h4>
-        </div>
-        <div class='detail__container-episodes'>
-            <h3 class='detail__text'>EPISODE</h3>
-            <div class='detail__episode'>${episodesTemplate}<div>
-        </div>
+        
     </div>  
     `
     ;

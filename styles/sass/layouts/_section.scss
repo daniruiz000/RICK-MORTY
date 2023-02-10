@@ -72,6 +72,7 @@
         align-items: flex-start;
         align-content: center;
         width: 100%;
+     
   
     }
     &__more{
@@ -93,7 +94,7 @@
     }
     &__resident{
         border-radius: 100px;
-        width: 40px;
+        width: 90px;
         margin: 10px;
         
     }
@@ -106,9 +107,10 @@
         &--character{
             margin: 10px;
             border-radius: 100px;
-            padding: 5px 10px;
+            padding: 10px 20px;
             background-color: $quinary-color;
             color: $senary-color;
+            font-size: 18px;
 
         }
 
@@ -117,8 +119,9 @@
             border-radius: 50px;
             background-color: $quinary-color;
             color: $senary-color;
-            padding: 10px auto;
-            margin: 10px;
+            padding: 10px 20px;
+            margin: 20px 10px;
+            text-align: center;
         }
     }
 }

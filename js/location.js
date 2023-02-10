@@ -106,17 +106,25 @@ const formatLocationDetail = (location) => {
     let residentsTemplate = formatResidents(arrayUrlImgResidents); 
 
     return `
-    <div class = 'detail'>
-        <div class = 'detail__header'>
-            <h4 class='detail__name'>${location.name}</h4>
+    <div class = 'detail detail--location'>
+        <div class = 'detail__header detail__header--location'>
+            <h4 class='detail__name detail__name--location'>${location.name}</h4>
         </div>
-        <div class='detail__body'>
-            <h3 class='detail__text'>TYPE</h3>
-            <h4 class='detail__data'>${location.type}</h4>
-            <h3 class='detail__text'>DIMENSION</h3>
-            <h4 class='detail__data'>${location.dimension}</h4>
-            <h3 class='detail__text '>RESIDENTS</h3>
-            <div class='detail__data detail__data--residentes'>${residentsTemplate}</div>
+        <div class='detail__body detail__body--location'>
+            <div class='detail__type--location'>
+                <h3 class='detail__text detail__text--location' >TYPE</h3>
+                <h4 class='detail__data detail__data--location-location'>${location.type}</h4>
+            </div>
+            <div class='detail__body-container--location'>
+                <div class='detail__dimension--location'>
+                    <h3 class='detail__text detail__text--location'>DIMENSION</h3>
+                    <h4 class='detail__data detail__data--location-location'>${location.dimension}</h4>
+                </div>
+            <div>
+                <h3 class='detail__text detail__text--location'>RESIDENTS</h3>
+                <div class='detail__data detail__data--residentes'>${residentsTemplate}</div>
+            </div>
+           
         </div>
     </div>  
     `;

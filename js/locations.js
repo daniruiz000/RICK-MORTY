@@ -2,7 +2,7 @@ let urllocationsNext;
 let locationsCards;
 let locationsData;
 
-const golocationsBack = ()=>{
+const goLocationsBack = ()=>{
 
     printPage('HOME');
 }
@@ -43,7 +43,14 @@ const printLocationsContent = (locations,response)=>{
     }); 
 
     const buttonBack = document.querySelector('.header__icon');
-    buttonBack.addEventListener('click', goBack);
+    buttonBack.addEventListener('click', goLocationsBack);
+
+    let containerFind = document.querySelector('.section__input')
+    const buttonFind = document.querySelector('.section__icon');
+    buttonFind.addEventListener('click', ()=> findLocations(containerFind.value));
+    console.log(containerFind)
+    console.log(containerFind.value)
+    console.log(buttonFind)
 }
 
 const getMoreLocations = ()=>{
@@ -65,21 +72,25 @@ const formatLocationsCard = (locations)=>{
     let templateLocations = locations.map(locations =>{
         
         return `
-    <div class = 'card'>
-        <div class= 'card__container'>
-            <div class = 'card__header'>
-                <h4 class='card__name'>${locations.name}</h4>
+    <div class = 'card card--locations'>
+        <div class= 'card__container card__container--locations'>
+            <div class = 'card__header card__header--locations'>
+                <h4 class='card__name card__name--locations'>${locations.name}</h4>
             </div>
-            <div class = 'card__body'> 
-                <div class ='card__data-container'>
-                    <h3 class='card__text'>TYPE</h3>
-                    <h4 class='card__data'>${locations.type}</h4>
-                    <h3 class='card__text'>>DIMENSION</h3>
-                    <h4 class='card__data'>${locations.dimension}</h4>
+            <div class = 'card__body card__body--locations'> 
+                <div class ='card__data-container card__data-container--locations'>
+                    <div class = 'card__type--locations'>
+                        <h3 class='card__text card__text--locations'>TYPE</h3>
+                        <h4 class='card__data card__data--locations'>${locations.type}</h4>
+                    </div>
+                    <div class = 'card__dimension--locations'>
+                        <h3 class='card__text card__text--locations'>DIMENSION</h3>
+                        <h4 class='card__data card__data--locations'>${locations.dimension}</h4>
+                    </div>
                 </div>  
             </div>
         </div>
-        <button class='card__details'>+MORE DETAILS</button>
+        <button class='card__details'>+ MORE DETAILS</button>
     </div>  
         `;
 
@@ -133,6 +144,11 @@ const mapDataLocations = (data)=>{
     return dataMapped;
 }
 
+const findLocations = (name)=>{
 
+    urlNext = `${URL_BASE}/location/?name=${name}`;
+    printLocations()
+
+}
 
 

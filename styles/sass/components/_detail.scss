@@ -32,34 +32,144 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: initial;
     width: 100%;
+
+    @include adaptTo ('not-mobile'){
+        flex-direction: row;
+
+    }
+    &--episode{
+        margin: 0 auto;
+        @include adaptTo ('not-mobile'){
+            flex-direction: row;
+
+        }
+    }
+    &--location{
+        margin: 0 auto;
+        @include adaptTo ('not-mobile'){
+            flex-direction: row;
+
+        }
+    }
     &__header{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        @include adaptTo ('not-mobile'){
+            background-color: $quaternary-color;
+            width: 40%;
+            height: 100vh;
+        }
+        @include adaptTo('desktop-top'){
+        
+            background-color: transparent;
+            
+        }
+        // &--episode{
+        //     @include adaptTo ('not-mobile'){
+        //         background-color: $quaternary-color;
+        //         width: 40%;
+        //         height: 100vh;
+        //     }
+        //     @include adaptTo('desktop-top'){
+            
+        //         background-color: transparent;
+                
+        //     }
+        // }
+        // &--location{
+        //     @include adaptTo ('not-mobile'){
+        //         background-color: $quaternary-color;
+        //         min-width: 40%;
+        //         height: 100vh;
+        //     }
+        //     @include adaptTo('desktop-top'){
+            
+        //         background-color: transparent;
+                
+        //     }
+        // }
     }
     &__img{
         width: 200px;
         border: 5px solid #BEA1C7;
         border-radius: 100px;
-        margin-top: 30px;
+        margin-top: 50px;
+        @include adaptTo ('not-mobile'){
+            margin-top: 200px;
+            
+        }
     }
     &__name{
         font-size: 20px;
         font-weight: 700;
         text-transform: uppercase;
         border-bottom: 3px solid #4D1F5B;
-        margin: 10px;
+        margin-top: 30px;
+        text-align: center;
+        padding: 10px 30px;
+        width: 90%;
+        
+        @include adaptTo ('not-mobile'){
+            font-size: 40px;
+            border-radius: 0;
+            border: none;
+            
+        }
+        @include adaptTo('desktop-top'){
+            background-color: transparent;
+        }
+
+        &--episode{
+            color: $senary-color;
+            border-bottom: none;
+            background-color: $quaternary-color;
+            border-radius: 40px;
+            margin-top: 200px;
+            @include adaptTo ('not-mobile'){
+                font-size: 40px;
+                border-radius: 0;
+                
+            }
+            @include adaptTo('desktop-top'){
+                background-color: transparent;
+                border-right: 4px solid #4D1F5B;
+                
+            }
+        }
+        &--location{
+            color: $senary-color;
+            border-bottom: none;
+            background-color: $quaternary-color;
+            border-radius: 40px;
+            width: 100%;
+           
+
+            @include adaptTo ('not-mobile'){
+                font-size: 40px;
+                margin-top: 200px;
+                background-color: transparent;  
+                border-radius: 0;
+            }
+            @include adaptTo('desktop-top'){
+                background-color: transparent;
+                border-right: 4px solid #4D1F5B;
+            }
+            
+        }
     }
     &__text{
         font-size: 14px;
         font-weight: 700;
         color: $octonary-color;
         margin: 10px;
-       
-        
+        &--episode{
+            margin: 25px 0 0 0;
+        }
+     
     }
     &__data{
         width: 100%;
@@ -70,7 +180,17 @@
         border-radius:0 20px 20px 0;
         margin: 10px;
         padding: 10px;
-        &--location{
+        &--location-location{
+            border-radius:0 20px 20px 0;
+            background-color: $quaternary-color;
+            color:$senary-color;
+            margin: 10px 10px;
+            @include adaptTo('desktop-top'){
+                width: 95%;
+                border-radius: 50px;
+            }
+        }
+        &--character-location{
             border-radius:20px;
             background-color: $quinary-color;
             color:$senary-color;
@@ -79,7 +199,15 @@
             width: 100%;
             display: flex;
             flex-flow: row wrap;
+            background-color: transparent;
         }
+        &--episode{
+            margin: 10px 10px;
+            @include adaptTo('desktop'){
+                border-radius:20px;
+            }
+        }
+      
     }
     &__container-status{
         width: 80%;
@@ -93,12 +221,22 @@
         align-content: center;
         align-items: center;
         justify-content: space-around;
+    }
+    &__container-episodes{
+        width: 80%;
+    }
+    &__container-data{
+        @include adaptTo('not-mobile'){
+            display: flex;
+            flex-flow: row nowrap;
+            width: 80%;
+        }
 
     }
     &__episode{
         display: flex;
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         align-content: center;
         width: 95%;
@@ -108,9 +246,60 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: flex-start;
+        padding: 0 30px;
+        &--episode{
+            @include adaptTo('not-mobile'){
+                margin: 30px auto;
+         
+            }
+        }
+        &--location{
+            @include adaptTo('not-mobile'){
+                margin: 30px auto;
+             
+            }
+        }
+        
+        
     }
+    &__body-episode{
+        @include adaptTo('desktop'){
+            width: 45%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: baseline;
+            margin-right: 20px;
 
+        }
+    }
+    &__body-dates{
+        @include adaptTo('desktop'){
+            width: 45%;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: baseline;
+
+        }
+    }
+    &__body-data{
+
+        &--episode{
+            @include adaptTo('desktop'){
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: first baseline;
+                align-content: center;
+            }
+        }
+    }
+    &__body-container--location{
+        width: 100%;
+    }
     &__status{
         
         color: $primary-color;
@@ -133,4 +322,10 @@
             background-color: $ten-color;
         }
     }
+    &__type{
+        &--location{
+            width: 100%;
+        }
+    }
+
 }

@@ -160,12 +160,12 @@ const formatSeasonsCard = (array)=>{
         <div class = 'card'>
             <div class= 'card__container'>
                 <div class = 'card__header'>
-                    <h4 class='card__name'>SEASON ${season.name}</h4>
+                    <h4 class='card__name card__name--episodes'>SEASON ${season.name}</h4>
                 </div>
-                <div class = 'card__body'> 
+                <div class = 'card__body card__body--episodes'> 
                     <div class ='card__data-container card__data-container--episodes'>
                         <h3 class='card__text'>DATE</h3>
-                        <h4 class='card__data card__data--episodes'>${season.earliestAirDate} - ${season.latestAirDate} </h4>
+                        <h4 class='card__data card__data--episodes card__data--episodes--date'>${season.earliestAirDate} - ${season.latestAirDate} </h4>
                         <h3 class='card__text'>EPISODES</h3>
                         <div class='card__data card__data--episodes'>${episodesCards}</div>
                     </div>  

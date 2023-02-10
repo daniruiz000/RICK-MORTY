@@ -106,17 +106,24 @@ const formatEpisodeDetail = (episode) => {
     let charactersTemplate = formatCharacters(arrayUrlImgCharacters); 
 
     return `
-    <div class = 'detail'>
-        <div class = 'detail__header'>
-            <h4 class='detail__name'>${episode.name}</h4>
+    <div class = 'detail detail--episode'>
+        <div class = 'detail__header detail__header--episode'>
+            <h4 class='detail__name detail__name--episode'>${episode.name}</h4>
         </div>
-        <div class='detail__body'>
-            <h3 class='detail__text'>EPISODE</h3>
-            <h4 class='detail__data'>${episode.episode}</h4>
-            <h3 class='detail__text'>DATE</h3>
-            <h4 class='detail__data'>${episode.date}</h4>
-            <h3 class='detail__text '>CHARACTERS</h3>
-            <div class='detail__data detail__data--residentes'>${charactersTemplate}</div>
+        <div class='detail__body detail__body--episode'>
+            <div class='detail__body-data--episode'>
+                <div class='detail__body-episode'>
+                    <h3 class='detail__text detail__text--episode'>EPISODE</h3>
+                    <h4 class='detail__data detail__data--episode'>${episode.episode}</h4></div>
+                <div class='detail__body-dates'>
+                    <h3 class='detail__text detail__text--episode'>DATE</h3>
+                    <h4 class='detail__data detail__data--episode'>${episode.date}</h4>
+                </div>  
+            </div>
+            <div class='detail__body-residents--espisode'>
+                <h3 class='detail__text detail__text--episode'>CHARACTERS</h3>
+                <div class='detail__container detail__data--residentes'>${charactersTemplate}</div>
+            </div>
         </div>
     </div>  
 `;

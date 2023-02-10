@@ -11,7 +11,7 @@ window.onload = () => {
 const printPage = (section, url) => {
 
     adaptHeader(section);
-
+    
     switch (section){
 
         case 'HOME':

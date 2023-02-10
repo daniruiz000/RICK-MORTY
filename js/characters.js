@@ -44,6 +44,20 @@ const printCharactersContent = (characters,response)=>{
 
     const buttonBack = document.querySelector('.header__icon');
     buttonBack.addEventListener('click', goCharactersBack);
+
+    let containerFind = document.querySelector('.section__input')
+    const buttonFind = document.querySelector('.section__icon');
+    buttonFind.addEventListener('click', ()=> findCharacters(containerFind.value));
+
+    
+    console.log(containerFind.value)
+}
+
+const findCharacters = (name)=>{
+    console.log(name)
+    urlNext = `${URL_BASE}/character/?name=${name}`;
+    printCharacters()
+    console.log(name)
 }
 
 const getMoreCharacters = ()=>{

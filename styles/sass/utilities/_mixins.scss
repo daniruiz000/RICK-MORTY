@@ -32,4 +32,10 @@
             @content;
         }
     }    
+
+    @if $breakpoint == 'desktop-top'{
+        @media  screen and (min-width: 1280px) {
+            @content;
+        }
+    }
 }
