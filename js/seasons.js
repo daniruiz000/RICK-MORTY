@@ -28,20 +28,13 @@ const printSeasons = () => {
     });
 
     const buttonAtras = document.querySelector('.header__icon');
-    buttonAtras.addEventListener('click', goSeasonsAtras);
-}
-
-const goSeasonsAtras = ()=>{
-
-    printPage('HOME');
+    buttonAtras.addEventListener('click', goBack);
 }
 
 const moreDetaileEpisode = (episode)=>{
 
-    printPage('SEASONS', `${URL_BASE}/episode/${episode.id}` )
+    printPage('SEASONS', `${URL_BASE}/episode/${episode.id}`)
 }
-
-
 
 const getEpisodes =  async() => {
 
@@ -62,7 +55,6 @@ const getEpisodes =  async() => {
     arrayEpisodes =  mapDataEpisodes(arrayEpisodes.concat(data.results));
 
     return arrayEpisodes;
-    
 }
 
 const getSeasonFromEpisodes = (episodeName)=>{

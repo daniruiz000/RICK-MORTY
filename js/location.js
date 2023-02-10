@@ -1,9 +1,4 @@
 
-const goLocationBack = ()=>{
-
-    printPage('LOCATIONS');
-}
-
 const printLocation = (url)=>{  
 
     getLocation(url).then(response =>{
@@ -24,7 +19,7 @@ const printLocation = (url)=>{
         }); 
         
     const buttonBack = document.querySelector('.header__icon');
-    buttonBack.addEventListener('click', goLocationBack);
+    buttonBack.addEventListener('click', goBack);
     })
 }
 

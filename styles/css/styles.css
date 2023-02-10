@@ -328,6 +328,7 @@ body {
   margin: 20px;
 }
 .section__input {
+  outline: none;
   font-size: 18px;
   border-left: 1px solid #C1B6B6;
   width: 80%;

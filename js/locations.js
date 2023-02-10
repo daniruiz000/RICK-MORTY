@@ -2,11 +2,6 @@ let urllocationsNext;
 let locationsCards;
 let locationsData;
 
-const goLocationsBack = ()=>{
-
-    printPage('HOME');
-}
-
 const printLocations = () => {
  
     getLocations().then(response =>{
@@ -43,14 +38,16 @@ const printLocationsContent = (locations,response)=>{
     }); 
 
     const buttonBack = document.querySelector('.header__icon');
-    buttonBack.addEventListener('click', goLocationsBack);
+    buttonBack.addEventListener('click', goBack);
 
     let containerFind = document.querySelector('.section__input')
-    const buttonFind = document.querySelector('.section__icon');
+    let buttonFind = document.querySelector('.section__icon');
+    containerFind.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            findLocations(containerFind.value);
+        }
+      });
     buttonFind.addEventListener('click', ()=> findLocations(containerFind.value));
-    console.log(containerFind)
-    console.log(containerFind.value)
-    console.log(buttonFind)
 }
 
 const getMoreLocations = ()=>{
@@ -146,7 +143,8 @@ const mapDataLocations = (data)=>{
 
 const findLocations = (name)=>{
 
-    urlNext = `${URL_BASE}/location/?name=${name}`;
+    let urlNext = `${URL_BASE}/location/?name=${name}`;
+    console.log(urlNext);
     printLocations()
 
 }

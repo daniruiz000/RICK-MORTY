@@ -20,14 +20,10 @@ const printEpisode = (url)=>{
       
             element.addEventListener('click', ()=> moreDetailsCharacters(response.characters[i]));
         }); 
+
         const buttonAtras = document.querySelector('.header__icon');
-        buttonAtras.addEventListener('click', goSeasonAtras);
+        buttonAtras.addEventListener('click', goBack);
     })
-}
-
-const goSeasonAtras = ()=>{
-
-    printPage('SEASONS');
 }
 
 const moreDetailsCharacters = (url)=>{
@@ -48,6 +44,7 @@ const getNumberCharacters = (array)=>{
 
     let arrayNumberResidents = [] 
     array.forEach(element => {
+
         let numberResident = element.replaceAll('https://rickandmortyapi.com/api/character/','');
         arrayNumberResidents.push(numberResident);
     });
@@ -73,6 +70,7 @@ const formatEpisode = (episode)=>{
 const createUrlImgCharacter = (number)=>{
 
     let urlImg = `https://rickandmortyapi.com/api/character/avatar/${number}.jpeg`;
+   
     return urlImg;
 }
 
@@ -87,6 +85,7 @@ const  getUrlCharacters = (array)=>{
 
     return arrayUrlImgResidents;
 }
+
 const formatCharacters = (array)=>{
 
     let charactersTemplate = array.map(element=>{

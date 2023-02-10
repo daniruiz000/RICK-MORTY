@@ -2,11 +2,6 @@ let urlNext;
 let charactersData;
 let charactersCards;
 
-const goCharactersBack = ()=>{
-    urlNext = null;
-    printPage('HOME',urlNext);
-}
-
 const printCharacters = () => {
 
     getCharacters().then(response =>{
@@ -16,7 +11,6 @@ const printCharacters = () => {
         printCharactersContent(charactersCards,response);
     });
 }
-
 
 const printCharactersContent = (characters,response)=>{
     
@@ -37,27 +31,32 @@ const printCharactersContent = (characters,response)=>{
 
     let buttonMore = document.querySelector('.section__more');
     buttonMore.addEventListener('click', getMoreCharacters);
+
     let buttonMoreDetails = [...document.getElementsByClassName('card__details')];
     buttonMoreDetails.forEach((element, i) => {
         element.addEventListener('click', ()=> moreDetailsCharacter(response[i]));
     }); 
 
-    const buttonBack = document.querySelector('.header__icon');
-    buttonBack.addEventListener('click', goCharactersBack);
+    let buttonBack = document.querySelector('.header__icon');
+    buttonBack.addEventListener('click', goBack);
 
     let containerFind = document.querySelector('.section__input')
-    const buttonFind = document.querySelector('.section__icon');
+    containerFind.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+          findCharacters(containerFind.value);
+        }
+      });
+
+    let buttonFind = document.querySelector('.section__icon');
     buttonFind.addEventListener('click', ()=> findCharacters(containerFind.value));
 
-    
-    console.log(containerFind.value)
 }
 
 const findCharacters = (name)=>{
-    console.log(name)
+
     urlNext = `${URL_BASE}/character/?name=${name}`;
     printCharacters()
-    console.log(name)
+
 }
 
 const getMoreCharacters = ()=>{
@@ -65,16 +64,18 @@ const getMoreCharacters = ()=>{
     getCharacters().then(response=>{
 
         response.forEach(element => {
+
             charactersData.push(element);
         });
-        personajesCards = formatCharactersCard(charactersData);
 
+        personajesCards = formatCharactersCard(charactersData);
         printCharactersContent(personajesCards, charactersData);
     });
 
 }
 
 const formatCharactersCard = (characters)=>{
+
     let templateCharacters = characters.map(character =>{
         
         return `
@@ -109,7 +110,9 @@ const formatCharactersCard = (characters)=>{
 
 
 const moreDetailsCharacter = (character)=>{
+
     urlNext = null;
+
     printPage('CHARACTERS', character.url)
 }
 
@@ -117,22 +120,29 @@ const getCharacters =  async() => {
 
     let url;        
 
-    if ( urlNext === null || urlNext === undefined){            
+    if ( urlNext === null || urlNext === undefined){  
+
         url = URL_BASE + "/character";
+
     } else {
+
         url = urlNext;
     }
 
     let response = await fetch(url);                        
-    let data = await response.json();                      
+    let data = await response.json();   
+
     urlNext = data.info.next;                               
-    dataMapped = mapDataCharacters(data.results);         
+    dataMapped = mapDataCharacters(data.results);     
+
     return dataMapped ; 
                                                
 }
 
 const mapDataCharacters = (data)=>{
+
     let dataMapped = data.map(character =>{
+
         let object = {
             name:character.name,
             image:character.image,
@@ -146,6 +156,7 @@ const mapDataCharacters = (data)=>{
         
         return object;
     });
+    
     return dataMapped;
      
 }

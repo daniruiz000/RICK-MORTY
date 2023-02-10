@@ -1,9 +1,4 @@
 
-const goCharacterBack = ()=>{
-    
-    urlNext = null;
-    printPage('CHARACTERS',urlNext);
-}
 
 
 const printCharacter = (url)=>{  
@@ -29,9 +24,10 @@ const printCharacter = (url)=>{
             element.addEventListener('click', ()=> moreDetailsEpisodes(response.episodes[i]));
         }); 
         
-    const buttonBack = document.querySelector('.header__icon');
-    buttonBack.addEventListener('click', goCharacterBack);
+    let buttonBack = document.querySelector('.header__icon');
+    buttonBack.addEventListener('click', goBack);
     })
+    urlNext = null;
 }
 
 const moreDetailsLocation = (url)=>{
@@ -48,9 +44,9 @@ const getCharacter = async(url)=>{
 
     let response = await fetch(url);
     let data = await response.json();
-    data = formatCharacter(data);
+    dataFormated = formatCharacter(data);
 
-    return data;
+    return dataFormated;
 }
 
 const getEpisodesNumbers = (array)=>{
