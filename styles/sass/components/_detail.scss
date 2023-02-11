@@ -60,39 +60,14 @@
         align-items: center;
         @include adaptTo ('not-mobile'){
             background-color: $quaternary-color;
-            width: 40%;
+            min-width: 40%;
             height: 100vh;
         }
         @include adaptTo('desktop-top'){
-        
-            background-color: transparent;
-            
+            background-color: transparent;    
         }
-        // &--episode{
-        //     @include adaptTo ('not-mobile'){
-        //         background-color: $quaternary-color;
-        //         width: 40%;
-        //         height: 100vh;
-        //     }
-        //     @include adaptTo('desktop-top'){
-            
-        //         background-color: transparent;
-                
-        //     }
-        // }
-        // &--location{
-        //     @include adaptTo ('not-mobile'){
-        //         background-color: $quaternary-color;
-        //         min-width: 40%;
-        //         height: 100vh;
-        //     }
-        //     @include adaptTo('desktop-top'){
-            
-        //         background-color: transparent;
-                
-        //     }
-        // }
     }
+    
     &__img{
         width: 200px;
         border: 5px solid #BEA1C7;
