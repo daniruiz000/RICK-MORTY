@@ -27,6 +27,10 @@
         max-width: 500px;
         cursor: pointer;
         padding: 60px 20px;
+        &:hover{
+            background-color:#885c96;
+            color:#EEE4F1;
+        }
         @include adaptTo('desktop'){
             margin: 0px 10px;
             width: 31%;

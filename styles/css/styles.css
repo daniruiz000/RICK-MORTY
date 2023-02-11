@@ -240,6 +240,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   cursor: pointer;
   padding: 60px 20px;
 }
+.nav__link:hover {
+  background-color: #885c96;
+  color: #EEE4F1;
+}
 @media screen and (min-width: 1024px) {
   .nav__link {
     margin: 0px 10px;
@@ -363,17 +367,23 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   padding: 5px 15px;
   border-radius: 50px;
 }
+.section__more:hover {
+  background-color: #EEE4F1;
+  color: #4D1F5B;
+}
 @media screen and (min-width: 768px) {
   .section__more {
     font-size: 24px;
     padding: 15px 45px;
-    border: 1px solid black;
   }
 }
 .section__resident {
   border-radius: 100px;
   width: 90px;
   margin: 10px;
+}
+.section__resident:hover {
+  border: 10px solid #4D1F5B;
 }
 .section__episode {
   display: flex;
@@ -389,6 +399,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   color: #4D1F5B;
   font-size: 18px;
 }
+.section__episode--character:hover {
+  background-color: #4D1F5B;
+  color: #EEE4F1;
+}
 .section__episode--seasons {
   width: 95%;
   border-radius: 50px;
@@ -397,6 +411,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   padding: 10px 20px;
   margin: 20px 10px;
   text-align: center;
+}
+.section__episode--seasons:hover {
+  background-color: #4D1F5B;
+  color: #EEE4F1;
 }
 
 /*
@@ -600,6 +618,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   border-radius: 50px;
   width: 90%;
   padding: 5px;
+}
+.card__details:hover {
+  color: #EEE4F1;
+  background-color: #4D1F5B;
 }
 @media screen and (min-width: 768px) {
   .card__details {
@@ -812,6 +834,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   border-radius: 20px;
   background-color: #EEE4F1;
   color: #4D1F5B;
+}
+.detail__data--character-location:hover {
+  background-color: #4D1F5B;
+  color: #EEE4F1;
 }
 .detail__data--residentes {
   width: 100%;

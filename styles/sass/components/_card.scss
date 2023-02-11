@@ -191,6 +191,10 @@
         border-radius: 50px;
         width: 90%;
         padding: 5px;
+        &:hover{
+            color: #EEE4F1;
+            background-color: $senary-color;
+        }
         @include adaptTo('not-mobile'){
             font-size: 14px;
         }

@@ -177,6 +177,10 @@
             border-radius:20px;
             background-color: $quinary-color;
             color:$senary-color;
+            &:hover{
+                background-color: $senary-color;
+                color:$quinary-color;
+            }
         }
         &--residentes{
             width: 100%;

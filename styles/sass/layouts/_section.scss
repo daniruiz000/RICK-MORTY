@@ -87,16 +87,23 @@
         color: $secondary-color;
         padding: 5px 15px;
         border-radius: 50px;
+        &:hover{
+            background-color: $quinary-color;
+            color: $senary-color;
+        }
         @include adaptTo ('not-mobile'){
             font-size: 24px;
             padding: 15px 45px;
-            border: 1px solid black;
+            
         }
     }
     &__resident{
         border-radius: 100px;
         width: 90px;
         margin: 10px;
+        &:hover{
+            border: 10px solid $senary-color;
+        }
         
     }
     &__episode{
@@ -112,6 +119,10 @@
             background-color: $quinary-color;
             color: $senary-color;
             font-size: 18px;
+            &:hover{
+                background-color: $senary-color;
+                color:$quinary-color ;
+            }
 
         }
 
@@ -123,6 +134,10 @@
             padding: 10px 20px;
             margin: 20px 10px;
             text-align: center;
+            &:hover{
+                background-color: $senary-color;
+                color:$quinary-color ;
+            }
         }
     }
 }
