@@ -43,6 +43,9 @@
     @include adaptTo('desktop'){
         width: 28%;
     }
+    &--seasons{
+        margin: 40px 20px;
+    }
     &__container{
         width: 100%;
         display: flex;
@@ -51,6 +54,7 @@
         align-items: center;
         margin: 0 auto;
         flex-direction: column;
+     
     }
     &__header{
         width: 95%;

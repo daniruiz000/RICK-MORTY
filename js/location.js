@@ -106,20 +106,21 @@ const formatLocationDetail = (location) => {
             <h4 class='detail__name detail__name--location'>${location.name}</h4>
         </div>
         <div class='detail__body detail__body--location'>
-            <div class='detail__type--location'>
-                <h3 class='detail__text detail__text--location' >TYPE</h3>
-                <h4 class='detail__data detail__data--location-location'>${location.type}</h4>
-            </div>
-            <div class='detail__body-container--location'>
+            <div class='detail__container-data'>
+                <div class='detail__type--location'>
+                    <h3 class='detail__text detail__text--location' >TYPE</h3>
+                    <h4 class='detail__data detail__data--location-location'>${location.type}</h4>
+                </div>   
                 <div class='detail__dimension--location'>
                     <h3 class='detail__text detail__text--location'>DIMENSION</h3>
                     <h4 class='detail__data detail__data--location-location'>${location.dimension}</h4>
                 </div>
-            <div>
+            </div>
+            
+            <div class='detail__body-container--location'>
                 <h3 class='detail__text detail__text--location'>RESIDENTS</h3>
                 <div class='detail__data detail__data--residentes'>${residentsTemplate}</div>
             </div>
-           
         </div>
     </div>  
     `;

@@ -149,8 +149,8 @@ const formatSeasonsCard = (array)=>{
         let episodesCards = formatEpisodesCard(season.episodes);
 
         return `
-        <div class = 'card'>
-            <div class= 'card__container'>
+        <div class = 'card card--seasons'>
+            <div class= 'card__container card__container--seasons'>
                 <div class = 'card__header'>
                     <h4 class='card__name card__name--episodes'>SEASON ${season.name}</h4>
                 </div>
