@@ -148,39 +148,13 @@ const formatUnknownTemplate = (status)=>{
    
 }
 
-const formatStatusTemplate = (status)=>{
-
-    switch (status) {
-
-        case 'Alive':
-            return `detail__status--option--${status}`
-   
-            break;
-
-        case 'Dead':
-            return `detail__status--option--${status}`
-       
-            break;
-
-        case 'unknown':
-            return `detail__status--option--${status}`
-           
-            break;
-            
-        default:
-            return ''
-
-            break;
-    }
-   
-}
-
 const formatCharacterDetail = (character) => {
 
     let episodesTemplate = formatEpisodesTemplate(character.episodesNumbers);   
     let statusAlive = formatAliveTemplate(character.status);
     let statusDead = formatDeadTemplate(character.status);
     let statusUnknown = formatUnknownTemplate(character.status);
+    
 
     return `
     <div class = 'detail'>

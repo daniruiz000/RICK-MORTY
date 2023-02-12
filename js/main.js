@@ -1,3 +1,4 @@
+
 const mainContainer = document.querySelector('.main');
 const URL_BASE = "https://rickandmortyapi.com/api";
 let arrayRecent=[];
@@ -9,9 +10,12 @@ window.onload = () => {
 }
 
 const goBack = ()=>{
-    urllocationsNext=null;
-    urlNext=null;
+
+    urlLocationsNext=null;
+    urlCharactersNext=null;
+
     arrayRecent.pop();
+
     lastDirrection = arrayRecent[arrayRecent.length-1];
 
     printPage(lastDirrection.section, lastDirrection.url);
@@ -29,40 +33,58 @@ const printPage = (section, url) => {
 
         case 'HOME':
 
+            urlLocationsNext=null;
+            urlCharactersNext=null;
+
             printHome();
+
             break;
 
         case 'CHARACTERS':
+
+            urlLocationsNext=null;
+
             if(url===undefined || url===null){
 
                 printCharacters()
 
-            }else{ printCharacter(url)
-            };
+            }else printCharacter(url)
+
             break;
 
         case 'SEASONS':
+
+            urlLocationsNext=null;
+            urlCharactersNext=null;
+
             if(url===undefined || url===null){
 
                 printSeasons()
 
-            }else{ printEpisode(url)
-            };
+            }else printEpisode(url)
+        
             break;
             
 
         case 'LOCATIONS':
+
+            urlLocationsNext=null;
+
             if(url===undefined || url===null){
 
                 printLocations()
 
-            }else{ printLocation(url)
-            };
+            }else printLocation(url)
+
             break;
 
         default:
 
+            urlLocationsNext=null;
+            urlCharactersNext=null;
+
             printHome();
+
             break;
     }
 

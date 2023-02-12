@@ -32,8 +32,9 @@ const getLocation = async(url)=>{
     
     let response = await fetch(url);
     let data = await response.json();
-    data = formatLocation(data);
-    return data;
+    dataFormated = formatLocation(data);
+    
+    return dataFormated;
 }
 
 const getNumberResidents = (array)=>{

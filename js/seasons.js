@@ -88,8 +88,6 @@ const mapDataEpisodes = (data)=>{
      
 }
 
-
-
 const getSeasons = (episodes)=>{
 
     const seasons = [];
@@ -122,12 +120,10 @@ const getSeasons = (episodes)=>{
             }
         }
     });
-    console.log(seasons)
+ 
     return seasons;
   
 }
-
-
 
 const formatEpisodesCard = (array)=>{
 
