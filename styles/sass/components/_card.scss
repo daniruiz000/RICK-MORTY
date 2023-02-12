@@ -10,7 +10,6 @@
     padding: 20px 10px;
     border-radius: 20px;
     width: 300px;
-    
     box-shadow: 0px 5px 5px 0px #a1a1a1, inset 0px 0px 10px 0px #ffffff;
     @include adaptTo('tablet'){
         width: 40%;
@@ -19,9 +18,11 @@
     @include adaptTo('desktop'){
         width: 28%;
     }
+
     &--seasons{
         margin: 40px 20px;
     }
+
     &__container{
         width: 100%;
         display: flex;
@@ -41,10 +42,15 @@
         align-items: center;
         flex-direction: row;
     }
+
     &__name{
         font-size: 14px;
         font-weight: 700;
         color: $senary-color;
+        @include adaptTo('not-mobile'){
+            font-size: 18px;
+        }
+
         &--episodes{
             width: 95%;
             color: $senary-color;
@@ -56,6 +62,7 @@
             padding: 25px ;
             font-weight: 300;
         }
+
         &--locations{
             width: 95%;
             color: $senary-color;
@@ -67,10 +74,8 @@
             padding: 25px ;
             font-weight: 300;
         }
-        @include adaptTo('not-mobile'){
-            font-size: 18px;
-        }
     }
+
     &__body{
         width: 100%;
         height: 100%;
@@ -80,20 +85,24 @@
         margin: 10px;
         flex-direction: row;
         justify-content: space-around;
+
         &--episodes{
             align-items:center;
             text-align: center;
         }
+
         &--locations{
             align-items: center;
         }
     }
+
     &__img{
         width: 40%;
         @include adaptTo('not-mobile'){
             width: 150px;
         }
     }
+
     &__text{
         width: 100%;
         font-size: 10px;
@@ -103,13 +112,16 @@
             font-size: 12px;
         }
     }
+
     &__data-container{
         width: 40%;
         margin: 0 10px;
+
         &--episodes{
             width: 90%;
             font-weight: 700;
         }
+
         &--locations{
             width: 90%;
             display: flex;
@@ -118,23 +130,26 @@
             align-items: stretch;
         }
     }
+
     &__data{
         font-size: 14px;
         color: $primary-color;
+        @include adaptTo('not-mobile'){
+            font-size: 16px;
+        }
+
         &--episodes{
             font-size: 14px;
             color: $primary-color;
             font-weight: 700;
+
             &--date{
                 font-weight: 300;
                 margin: 20px;
             }
-
-        }
-        @include adaptTo('not-mobile'){
-            font-size: 16px;
         }
     }
+    
     &__status{
         background-color: $secondary-color;
         color: $secondary-color;
@@ -144,21 +159,26 @@
         @include adaptTo('not-mobile'){
             font-size: 14px;
         }
+
         &--Alive{
-        background-color: $septenary-color;
+            background-color: $septenary-color;
+
             &--active{
                 background-color: $septenary-color;
             }
         }
+
         &--unknown{
             background-color: $eleven-color;
-            }
+        }
+
         &--Dead{
             background-color: $ten-color;
         }
     
 
     }
+
     &__details{
         font-size: 12px;
         font-weight: 700;
@@ -167,16 +187,18 @@
         border-radius: 50px;
         width: 90%;
         padding: 5px;
-        &:hover{
-            color: #EEE4F1;
-            background-color: $senary-color;
-        }
         @include adaptTo('not-mobile'){
             font-size: 14px;
         }
 
+        &:hover{
+            color: #EEE4F1;
+            background-color: $senary-color;
+        }
     }
+
     &__type{
+
         &--locations{
             width: 50%;
             border-right: 2px solid #a6a6a6;
@@ -184,12 +206,13 @@
             padding: 0 20px 0 0;
         }
     }
+
     &__dimension{
+
         &--locations{
             width: 50%;
             padding: 0 0 20px  0;
             text-align: center;
-            
         }
     }
 }

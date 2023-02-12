@@ -220,18 +220,7 @@
         align-items: flex-start;
         justify-content: flex-start;
         padding: 0 30px;
-        margin: 30px auto;
-        &--episode{
-            @include adaptTo('not-mobile'){
-                
-            }
-        }
-
-        &--location{
-            @include adaptTo('not-mobile'){
-                
-            }
-        }     
+        margin: 30px auto;  
     }
 
     &__body-episode{

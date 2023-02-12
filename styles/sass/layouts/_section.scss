@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     color: $senary-color;
+
     &__title{
         width: 100%;
         font-size: 14px;
@@ -20,6 +21,7 @@
             border-radius: 0  0 20px 20px;
         }
     }
+
     &__finder{
         background-color: $secondary-color;
         width: 300px;
@@ -39,11 +41,13 @@
             width: 80%;
         }
     }
+
     &__icon{
         font-size: 30px;
         width: 30px;
         margin: 20px;
     }
+
     &__input{
         outline: none;
         font-size: 18px;
@@ -54,6 +58,7 @@
             font-size: 24px;
         }
     }
+
     &__container{
         display: flex;
         flex-flow: row wrap;
@@ -61,9 +66,8 @@
         align-items: flex-start;
         align-content: center;
         width: 100%;
-     
-  
     }
+
     &__more{
         font-size: 16px;
         font-weight: 700;
@@ -75,25 +79,28 @@
         color: $secondary-color;
         padding: 5px 15px;
         border-radius: 50px;
+        @include adaptTo ('not-mobile'){
+            font-size: 24px;
+            padding: 15px 45px;  
+        }
+
         &:hover{
             background-color: $quinary-color;
             color: $senary-color;
         }
-        @include adaptTo ('not-mobile'){
-            font-size: 24px;
-            padding: 15px 45px;
-            
-        }
     }
+
     &__resident{
         border-radius: 100px;
         width: 90px;
         margin: 10px;
+
         &:hover{
             border: 10px solid $senary-color;
         }
         
     }
+
     &__episode{
         display: flex;
         justify-content: center;
@@ -108,11 +115,11 @@
             color: $senary-color;
             font-size: 18px;
             min-width: 65px;
+
             &:hover{
                 background-color: $senary-color;
                 color:$quinary-color ;
             }
-
         }
 
         &--seasons{
@@ -123,6 +130,7 @@
             padding: 10px 20px;
             margin: 20px 10px;
             text-align: center;
+            
             &:hover{
                 background-color: $senary-color;
                 color:$quinary-color ;
