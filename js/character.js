@@ -1,6 +1,4 @@
 
-
-
 const printCharacter = (url)=>{  
 
     getCharacter(url).then(response =>{
@@ -117,7 +115,7 @@ const formatAliveTemplate = (status)=>{
 
     if(status === 'Alive'){
 
-        return `detail__status--${status}`
+        return `detail__status--option--${status}`
 
     }else{
 
@@ -129,7 +127,7 @@ const formatDeadTemplate = (status)=>{
 
     if(status === 'Dead'){
 
-        return `detail__status--${status}`
+        return `detail__status--option--${status}`
 
     }else{
 
@@ -141,11 +139,38 @@ const formatUnknownTemplate = (status)=>{
 
     if (status === 'unknown'){
 
-        return `detail__status--${status}`
+        return `detail__status--option--${status}`
 
     }else{
 
         return ''
+    }
+   
+}
+
+const formatStatusTemplate = (status)=>{
+
+    switch (status) {
+
+        case 'Alive':
+            return `detail__status--option--${status}`
+   
+            break;
+
+        case 'Dead':
+            return `detail__status--option--${status}`
+       
+            break;
+
+        case 'unknown':
+            return `detail__status--option--${status}`
+           
+            break;
+            
+        default:
+            return ''
+
+            break;
     }
    
 }
@@ -164,15 +189,15 @@ const formatCharacterDetail = (character) => {
             <h4 class='detail__name'>${character.name}</h4>
         </div>
         <div class='detail__body'>
-            <div class='detail__container-status'>
+            <div class='detail__container detail__container-status'>
                 <h3 class='detail__text'>STATUS</h3>
-                <div class='detail__container-options'>
-                    <h4 class='detail__status ${statusAlive} '>ALIVE</h4>
-                    <h4 class='detail__status ${statusDead}'>DEAD</h4>
-                    <h4 class='detail__status ${statusUnknown}'>UKNOWN</h4>
+                <div class='detail__container detail__container--options'>
+                    <h4 class='detail__status detail__status--option ${statusAlive} '>ALIVE</h4>
+                    <h4 class='detail__status detail__status--option ${statusDead}'>DEAD</h4>
+                    <h4 class='detail__status detail__status--option ${statusUnknown}'>UKNOWN</h4>
                 </div>
             </div>
-            <div class='detail__container-data'>
+            <div class='detail__container detail__container--data'>
                 <div class='detail__body-dates'>
                     <h3 class='detail__text'>SPECIES</h3>
                     <h4 class='detail__data'>${character.species}</h4>
@@ -186,7 +211,7 @@ const formatCharacterDetail = (character) => {
                     <h4 class='detail__data detail__data--character-location'>${character.location.name}</h4>
                 </div>     
             </div>
-            <div class='detail__container-episodes'>
+            <div class='detail__container detail__container--episodes'>
                 <h3 class='detail__text'>EPISODE</h3>
                 <div class='detail__episode'>${episodesTemplate}<div>
             </div>

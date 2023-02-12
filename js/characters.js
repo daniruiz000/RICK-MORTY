@@ -90,7 +90,7 @@ const formatCharactersCard = (characters)=>{
                 <div class ='card__data-container'>
                     <h3 class='card__text'>SPECIES</h3>
                     <h4 class='card__data'>${character.species}</h4>
-                    <h3 class='card__text'>>GENDER</h3>
+                    <h3 class='card__text'>GENDER</h3>
                     <h4 class='card__data'>${character.gender}</h4>
                     <h3 class='card__text'>ORIGIN</h3>
                     <h4 class='card__data'>${character.origin}</h4>

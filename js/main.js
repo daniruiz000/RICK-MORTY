@@ -19,10 +19,10 @@ const goBack = ()=>{
 }
 
 const printPage = (section, url) => {
-
+   
     let recentDirection = {section,url};
     arrayRecent.push(recentDirection);
-
+  
     adaptHeader(section);
     
     switch (section){

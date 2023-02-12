@@ -1,16 +1,4 @@
-/*
-            <section class="section">
-                <h3 class="section__title">CHARACTER FINDER</h3>
-                <div class='section__finder>
-                    <i class="section__icon fa-solid fa-magnifying-glass"></i>
-                    <input class='section__input type="text" placeholder="Busca el personaje que quieras..."></input>
-                </div>
-                <section class="section__container">
-                    ${personajesCards}
-                </section>
-                <button class="section__more">+MORE</button>
-            </section>
-*/
+
 .section{
     width: 100%;
     display: flex;
@@ -119,6 +107,7 @@
             background-color: $quinary-color;
             color: $senary-color;
             font-size: 18px;
+            min-width: 65px;
             &:hover{
                 background-color: $senary-color;
                 color:$quinary-color ;

@@ -122,7 +122,7 @@ const getSeasons = (episodes)=>{
             }
         }
     });
-
+    console.log(seasons)
     return seasons;
   
 }

@@ -1,32 +1,3 @@
-/*   
-           <div class = 'detail'>
-        <div class = 'detail__header'>
-            <img class='detail__img' src='${character.image}'>
-            <h4 class='detail__name'>${character.name}</h4>
-        </div>
-        <div class='detail__container-status'>
-            <h3 class='detail__text'>STATUS</h3>
-            <div class='detail__container-options'>
-                <h4 class='detail__status detail__status--Alive'>ALIVE</h4>
-                <h4 class='detail__status detail__status--Dead'>DEAD</h4>
-                <h4 class='detail__status detail__status--unknown'>UKNOWN</h4>
-            </div>
-        </div>
-        <div class='detail__body'>
-            <h3 class='detail__text'>SPECIES</h3>
-            <h4 class='detail__data'>>${character.species}</h4>
-            <h3 class='detail__text'>ORIGIN</h3>
-            <h4 class='detail__data'>${character.origin}</h4>
-            <h3 class='detail__text detail__text--location'>LOCATION</h3>
-            <h4 class='detail__data'>${character.location}</h4>
-        </div>
-        <div class='detail__container-episodes'>
-            <h3 class='detail__text'>EPISODE</h3>
-            <h4 class='detail__episode'>${character.episode}</h4>
-        </div>
-    </div>  
-`
-*/
 
 .detail{
     display: flex;
@@ -37,22 +8,23 @@
 
     @include adaptTo ('not-mobile'){
         flex-direction: row;
-
+        margin: 0 auto;
     }
+
     &--episode{
         margin: 0 auto;
         @include adaptTo ('not-mobile'){
             flex-direction: row;
-
         }
     }
+
     &--location{
         margin: 0 auto;
         @include adaptTo ('not-mobile'){
             flex-direction: row;
-
         }
     }
+
     &__header{
         display: flex;
         flex-direction: column;
@@ -74,10 +46,11 @@
         border-radius: 100px;
         margin-top: 50px;
         @include adaptTo ('not-mobile'){
-            margin-top: 200px;
+            margin-top: 100px;
             
         }
     }
+
     &__name{
         font-size: 20px;
         font-weight: 700;
@@ -87,7 +60,6 @@
         text-align: center;
         padding: 10px 30px;
         width: 90%;
-        
         @include adaptTo ('not-mobile'){
             font-size: 40px;
             border-radius: 0;
@@ -103,39 +75,37 @@
             border-bottom: none;
             background-color: $quaternary-color;
             border-radius: 40px;
-            margin-top: 200px;
             @include adaptTo ('not-mobile'){
+                margin-top: 100px;
                 font-size: 40px;
                 border-radius: 0;
-                
+                border: none;
             }
             @include adaptTo('desktop-top'){
                 background-color: transparent;
                 border-right: 4px solid #4D1F5B;
-                
             }
         }
+
         &--location{
             color: $senary-color;
             border-bottom: none;
             background-color: $quaternary-color;
             border-radius: 40px;
-            width: 100%;
-           
-
             @include adaptTo ('not-mobile'){
+                margin-top: 100px;
                 font-size: 40px;
-                margin-top: 200px;
-                background-color: transparent;  
                 border-radius: 0;
+                border: none;
+
             }
             @include adaptTo('desktop-top'){
                 background-color: transparent;
                 border-right: 4px solid #4D1F5B;
             }
-            
         }
     }
+
     &__text{
         font-size: 14px;
         font-weight: 700;
@@ -145,11 +115,13 @@
             width: 50%;
             border-radius: 20px;
         }
+
         &--episode{
             margin: 25px 0 0 0;
         }
      
     }
+
     &__data{
         width: 100%;
         font-size: 18px;
@@ -160,9 +132,10 @@
         margin: 10px;
         padding: 10px;
         @include adaptTo('desktop'){
-            
             border-radius: 20px;
         }
+        
+
         &--location-location{
             border-radius:0 20px 20px 0;
             background-color: $quaternary-color;
@@ -173,6 +146,7 @@
                 border-radius: 50px;
             }
         }
+
         &--character-location{
             border-radius:20px;
             background-color: $quinary-color;
@@ -182,12 +156,16 @@
                 color:$quinary-color;
             }
         }
+
         &--residentes{
             width: 100%;
             display: flex;
             flex-flow: row wrap;
             background-color: transparent;
+            justify-content: center;
+            align-items: center;
         }
+
         &--episode{
             margin: 10px 10px;
             @include adaptTo('desktop'){
@@ -196,65 +174,66 @@
         }
       
     }
-    &__container-status{
+
+    &__container{
         width: 100%;
-        margin: 10px;
-    }
-    
-    &__container-options{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-content: center;
-        align-items: center;
-        justify-content: space-around;
-    }
-    &__container-episodes{
-        width: 100%;
-    }
-    &__container-data{
-        @include adaptTo('tablet'){
-            display: flex;
-            flex-flow: column nowrap;
-            width: 100%;
-        }
-        @include adaptTo('desktop'){
-            display: flex;
-            flex-flow: row nowrap;
-            width: 100%;
+
+        &--status{
+            margin: 10px;
         }
 
+        &--options{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        &--data{
+            @include adaptTo('tablet'){
+                display: flex;
+                flex-flow: column nowrap;
+                width: 100%;
+            }
+            @include adaptTo('desktop'){
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+            }
+        }
     }
+
     &__episode{
         display: flex;
         flex-flow: row wrap;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         align-content: center;
-        width: 95%;
+        width: 100%;
     }
+
     &__body{
-        width: 80%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
         padding: 0 30px;
+        margin: 30px auto;
         &--episode{
             @include adaptTo('not-mobile'){
-                margin: 30px auto;
-         
+                
             }
         }
+
         &--location{
             @include adaptTo('not-mobile'){
-                margin: 30px auto;
-             
+                
             }
-        }
-        
-        
+        }     
     }
+
     &__body-episode{
         @include adaptTo('desktop'){
             width: 45%;
@@ -263,9 +242,9 @@
             justify-content: center;
             align-items: baseline;
             margin-right: 20px;
-
         }
     }
+
     &__body-dates{
         @include adaptTo('desktop'){
             margin: 0 20px;
@@ -274,14 +253,14 @@
             flex-flow: column nowrap;
             justify-content: center;
             align-items: baseline;
-
         }
     }
-    &__body-data{
 
+    &__body-data{
         &--episode{
+            width: 100%;
             @include adaptTo('desktop'){
-                width: 100%;
+                
                 display: flex;
                 flex-flow: row nowrap;
                 align-items: center;
@@ -290,47 +269,72 @@
             }
         }
     }
+
     &__body-container--location{
         width: 100%;
     }
+
     &__status{
-        
         color: $primary-color;
         font-size: 10px;
         font-weight: 300;
         padding: 5px 20px;
+        
         @include adaptTo('not-mobile'){
             font-size: 14px;
         }
-        &--Alive{
-        background-color: $septenary-color;
-            &--active{
+
+        &--option{
+            border-radius: 20px;
+            &--Alive{
                 background-color: $septenary-color;
             }
+    
+            &--unknown{
+                background-color: $eleven-color;
+            }
+    
+            &--Dead{
+                background-color: $ten-color;
+            }
         }
+
+        &--Alive{
+            background-color: $septenary-color;
+        }
+
         &--unknown{
             background-color: $eleven-color;
-            }
+        }
+
         &--Dead{
             background-color: $ten-color;
         }
     }
 
     &__type{
+
         &--location{
             width: 100%;
-            @include adaptTo('not-mobile'){
+            @include adaptTo('tablet'){
+                width: 100%;
+            }
+            @include adaptTo('desktop'){
                 width: 50%;
-         
+                margin-right: 10px;
             }
         }
     }
+
     &__dimension{
+
         &--location{
             width: 100%;
-            @include adaptTo('not-mobile'){
+            @include adaptTo('tablet'){
+                width: 100%;
+            }
+            @include adaptTo('desktop'){
                 width: 50%;
-         
             }
         }
     }

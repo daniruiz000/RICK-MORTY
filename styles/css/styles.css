@@ -270,19 +270,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   }
 }
 
-/*
-            <section class="section">
-                <h3 class="section__title">CHARACTER FINDER</h3>
-                <div class='section__finder>
-                    <i class="section__icon fa-solid fa-magnifying-glass"></i>
-                    <input class='section__input type="text" placeholder="Busca el personaje que quieras..."></input>
-                </div>
-                <section class="section__container">
-                    ${personajesCards}
-                </section>
-                <button class="section__more">+MORE</button>
-            </section>
-*/
 .section {
   width: 100%;
   display: flex;
@@ -398,6 +385,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   background-color: #EEE4F1;
   color: #4D1F5B;
   font-size: 18px;
+  min-width: 65px;
 }
 .section__episode--character:hover {
   background-color: #4D1F5B;
@@ -417,30 +405,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   color: #EEE4F1;
 }
 
-/*
-          <section class = 'card'>
-                <div class= 'card__container'>
-                    <div class = 'card__header'>
-                        <h4 class='card__name'>${character.name}</h4>
-                        <h4 class='card__status card__status--${character.status}'>${character.status}</h4>  
-                    </div>
-                    <div class = 'card__body'>
-                        <img class='card__img' src='${character.image}'>
-                        <div class ='card__data-container'>
-                            <h3 class='card__text'>SPECIES</h3>
-                            <h4 class='card__data'>>${character.species}</h4>
-                            <h3 class='card__text'>>GENDER</h3>
-                            <h4 class='card__data'>${character.gender}</h4>
-                            <h3 class='card__text'>ORIGIN</h3>
-                            <h4 class='card__data'>${character.origin}</h4>
-                            <h3 class='card__text'>LOCATION</h3>
-                            <h4 class='card__data'>${character.location}</h4>
-                        </div>  
-                    </div>
-                </div>
-                <a class='card__details' href='#'>+MORE DETAILS</a>
-            </section>  
-*/
 .card {
   display: flex;
   flex-flow: column nowrap;
@@ -640,35 +604,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   text-align: center;
 }
 
-/*   
-           <div class = 'detail'>
-        <div class = 'detail__header'>
-            <img class='detail__img' src='${character.image}'>
-            <h4 class='detail__name'>${character.name}</h4>
-        </div>
-        <div class='detail__container-status'>
-            <h3 class='detail__text'>STATUS</h3>
-            <div class='detail__container-options'>
-                <h4 class='detail__status detail__status--Alive'>ALIVE</h4>
-                <h4 class='detail__status detail__status--Dead'>DEAD</h4>
-                <h4 class='detail__status detail__status--unknown'>UKNOWN</h4>
-            </div>
-        </div>
-        <div class='detail__body'>
-            <h3 class='detail__text'>SPECIES</h3>
-            <h4 class='detail__data'>>${character.species}</h4>
-            <h3 class='detail__text'>ORIGIN</h3>
-            <h4 class='detail__data'>${character.origin}</h4>
-            <h3 class='detail__text detail__text--location'>LOCATION</h3>
-            <h4 class='detail__data'>${character.location}</h4>
-        </div>
-        <div class='detail__container-episodes'>
-            <h3 class='detail__text'>EPISODE</h3>
-            <h4 class='detail__episode'>${character.episode}</h4>
-        </div>
-    </div>  
-`
-*/
 .detail {
   display: flex;
   flex-direction: column;
@@ -679,6 +614,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
 @media screen and (min-width: 768px) {
   .detail {
     flex-direction: row;
+    margin: 0 auto;
   }
 }
 .detail--episode {
@@ -723,7 +659,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
 }
 @media screen and (min-width: 768px) {
   .detail__img {
-    margin-top: 200px;
+    margin-top: 100px;
   }
 }
 .detail__name {
@@ -753,12 +689,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   border-bottom: none;
   background-color: #F3F3F3;
   border-radius: 40px;
-  margin-top: 200px;
 }
 @media screen and (min-width: 768px) {
   .detail__name--episode {
+    margin-top: 100px;
     font-size: 40px;
     border-radius: 0;
+    border: none;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -772,14 +709,13 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   border-bottom: none;
   background-color: #F3F3F3;
   border-radius: 40px;
-  width: 100%;
 }
 @media screen and (min-width: 768px) {
   .detail__name--location {
+    margin-top: 100px;
     font-size: 40px;
-    margin-top: 200px;
-    background-color: transparent;
     border-radius: 0;
+    border: none;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -844,6 +780,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
   display: flex;
   flex-flow: row wrap;
   background-color: transparent;
+  justify-content: center;
+  align-items: center;
 }
 .detail__data--episode {
   margin: 10px 10px;
@@ -853,30 +791,28 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
     border-radius: 20px;
   }
 }
-.detail__container-status {
+.detail__container {
   width: 100%;
+}
+.detail__container--status {
   margin: 10px;
 }
-.detail__container-options {
-  width: 100%;
+.detail__container--options {
   display: flex;
   flex-direction: row;
   align-content: center;
   align-items: center;
   justify-content: space-around;
 }
-.detail__container-episodes {
-  width: 100%;
-}
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-  .detail__container-data {
+  .detail__container--data {
     display: flex;
     flex-flow: column nowrap;
     width: 100%;
   }
 }
 @media screen and (min-width: 1024px) {
-  .detail__container-data {
+  .detail__container--data {
     display: flex;
     flex-flow: row nowrap;
     width: 100%;
@@ -885,28 +821,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
 .detail__episode {
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   align-content: center;
-  width: 95%;
+  width: 100%;
 }
 .detail__body {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 0 30px;
-}
-@media screen and (min-width: 768px) {
-  .detail__body--episode {
-    margin: 30px auto;
-  }
-}
-@media screen and (min-width: 768px) {
-  .detail__body--location {
-    margin: 30px auto;
-  }
+  margin: 30px auto;
 }
 @media screen and (min-width: 1024px) {
   .detail__body-episode {
@@ -928,9 +855,11 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
     align-items: baseline;
   }
 }
+.detail__body-data--episode {
+  width: 100%;
+}
 @media screen and (min-width: 1024px) {
   .detail__body-data--episode {
-    width: 100%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -952,10 +881,19 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
     font-size: 14px;
   }
 }
-.detail__status--Alive {
+.detail__status--option {
+  border-radius: 20px;
+}
+.detail__status--option--Alive {
   background-color: #81CE7F;
 }
-.detail__status--Alive--active {
+.detail__status--option--unknown {
+  background-color: #BBBBBB;
+}
+.detail__status--option--Dead {
+  background-color: #D85252;
+}
+.detail__status--Alive {
   background-color: #81CE7F;
 }
 .detail__status--unknown {
@@ -967,15 +905,26 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
 .detail__type--location {
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .detail__type--location {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
   .detail__type--location {
     width: 50%;
+    margin-right: 10px;
   }
 }
 .detail__dimension--location {
   width: 100%;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .detail__dimension--location {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
   .detail__dimension--location {
     width: 50%;
   }
